@@ -1,0 +1,15 @@
+{
+  "name": "test-automation",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Nurul Hanisah",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "cy:open": "cypress open",
+    "cy:run": "cypress run"
+  },
+  "devDependencies": {
+    "cypress": "15.14.1"
+  }
+}
