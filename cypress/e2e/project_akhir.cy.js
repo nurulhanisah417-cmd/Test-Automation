@@ -9,65 +9,89 @@ describe('OrangeHRM - Open Source HR Management', () => {
   const dashboardPage = new DashboardPage()
   const forgotPasswordPage = new ForgotPasswordPage()
 
-  // it('Login dengan credential yang valid', () => {
-  //   loginPage.visitPage()
-  //   loginPage.login(
-  //     loginData.validCredentials.username,
-  //     loginData.validCredentials.password,
-  //     true
-  //   )
-  // })
+  it('Login dengan credential yang valid', () => {
+    loginPage.visitPage()
+    loginPage.login(
+      loginData.validCredentials.username,
+      loginData.validCredentials.password,
+      true
+    )
+  })
 
-  // it('Login dengan password yang tidak valid', () => {
-  //   loginPage.visitPage()
-  //   loginPage.login(
-  //     loginData.invalidPassword.username,
-  //     loginData.invalidPassword.password,
-  //     false
-  //   )
-  // });
+  it('Login dengan password yang tidak valid', () => {
+    loginPage.visitPage()
+    loginPage.login(
+      loginData.invalidPassword.username,
+      loginData.invalidPassword.password,
+      false
+    )
+  });
 
-  // it('Login dengan username yang not valid', () => {
-  //   loginPage.visitPage()
-  //   loginPage.login(
-  //     loginData.invalidUsername.username,
-  //     loginData.invalidUsername.password,
-  //     false
-  //   )
-  // });
+  it('Login dengan username yang not valid', () => {
+    loginPage.visitPage()
+    loginPage.login(
+      loginData.invalidUsername.username,
+      loginData.invalidUsername.password,
+      false
+    )
+  });
 
-  // it('Login dengan field dan password kosong', () => {
-  //   loginPage.visitPage()
-  //   loginPage.login(
-  //     loginData.emptyFields.username,
-  //     loginData.emptyFields.password,
-  //     false
-  //   )
-  // });
+  it('Login dengan field dan password kosong', () => {
+    loginPage.visitPage()
+    loginPage.login(
+      loginData.emptyFields.username,
+      loginData.emptyFields.password,
+      false
+    )
+  });
 
-  // it('Login dengan email', () => {
-  //   loginPage.visitPage()
-  //   loginPage.login(
-  //     loginData.validEmail.username,
-  //     loginData.validEmail.password,
-  //     false
-  //   )
-  // });
+  it('Login dengan email', () => {
+    loginPage.visitPage()
+    loginPage.login(
+      loginData.validEmail.username,
+      loginData.validEmail.password,
+      false
+    )
+  });
 
-  // it('Salah password berulang', () => {
-  //   loginPage.visitPage()
-  //   loginPage.login(
-  //     loginData.emptyFields.username,
-  //     loginData.emptyFields.password,
-  //     false
-  //   )
-  // });
+  it('Salah password berulang', () => {
+    loginPage.visitPage()
+    loginPage.login(
+      loginData.emptyFields.username,
+      loginData.emptyFields.password,
+      false
+    )
+  });
 
   it('Show dashboard if valid username and password are provided', () => {
     dashboardPage.loginAsValidUser(
       loginData.validCredentials.username,
       loginData.validCredentials.password
     )
+  });
+
+  it('Show dashboard show profile user', () => {
+    dashboardPage.loginAsValidUser(
+      loginData.validCredentials.username,
+      loginData.validCredentials.password
+    )
+    dashboardPage.viewProfile()
+  });
+
+  it('Show dashboard show contact details', () => {
+    dashboardPage.loginAsValidUser(
+      loginData.validCredentials.username,
+      loginData.validCredentials.password
+    )
+    dashboardPage.viewContactDetails()
+  });
+
+  it('Show dashboard update contact details', () => {
+    dashboardPage.loginAsValidUser(
+      loginData.validCredentials.username,
+      loginData.validCredentials.password
+    )
+    dashboardPage.updateContactDetails()
   });
 
   it('Forgot password dengan username valid dan action cancel', () => {
@@ -90,7 +114,7 @@ describe('OrangeHRM - Open Source HR Management', () => {
 
   it('Forgot password dengan username blank dan action reset', () => {
     forgotPasswordPage.visitPage()
-    forgotPasswordPage.triggerReset(loginData.emptyFields.username)
+    forgotPasswordPage.triggerReset('')
     forgotPasswordPage.verifyRequiredValidation()
   });  
 
