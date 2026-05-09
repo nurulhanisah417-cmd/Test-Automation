@@ -1,0 +1,22 @@
+{
+  "validCredentials": {
+    "username": "Admin",
+    "password": "admin123"
+  },
+  "invalidPassword": {
+    "username": "Admin",
+    "password": "orange123"
+  },
+  "invalidUsername": {
+    "username": "Orange",
+    "password": "admin123"
+  },
+  "emptyFields": {
+    "username": "-",
+    "password": "-"
+  },
+  "validEmail": {
+    "username": "admin@gmail.com",
+    "password": "admin123"
+  }
+}
