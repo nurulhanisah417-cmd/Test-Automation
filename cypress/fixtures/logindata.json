@@ -12,8 +12,8 @@
     "password": "admin123"
   },
   "emptyFields": {
-    "username": "-",
-    "password": "-"
+    "username": "",
+    "password": ""
   },
   "validEmail": {
     "username": "admin@gmail.com",
